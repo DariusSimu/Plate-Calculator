@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#1E1E1E</color>
+    <color name="primary_dark">#10213E</color>
+    <color name="primary_light">#1A2A3A</color>
+    <color name="background">#121212</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#AAAAAA</color>
+    <color name="text_hint">#555555</color>
+    <color name="button_inactive">#2A2A2A</color>
+    <color name="button_inactive_text">#CCCCCC</color>
+    <color name="accent">#FFB300</color>
+    <color name="warning">#FFB300</color>
+    <color name="btn_active_text">#FFFFFF</color>
+    <color name="btn_inactive_text">#555555</color>
+    <color name="checkbox_color">#555555</color>
+</resources>

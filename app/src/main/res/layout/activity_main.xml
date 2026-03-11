@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Plate Calculator"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:gravity="center"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp" />
+
+        <!-- Unit Toggle -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnKg"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="kg"
+                android:textSize="14sp"
+                android:layout_marginEnd="6dp"
+                style="@style/ToggleButton"/>
+
+            <Button
+                android:id="@+id/btnLbs"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="lbs"
+                android:textSize="14sp"
+                android:layout_marginStart="6dp"
+                style="@style/ToggleButton"/>
+        </LinearLayout>
+
+        <!-- Weight Input -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TARGET WEIGHT"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_secondary"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/etWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:inputType="numberDecimal"
+                        android:textSize="22sp"
+                        android:textColor="@color/text_primary"
+                        android:background="@color/surface"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:hint="0"
+                        android:textColorHint="@color/text_secondary"
+                        android:layout_marginEnd="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tvUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kg"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Bar Selection -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BAR"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_secondary"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnBar20"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:text="20 kg"
+                        android:textSize="14sp"
+                        style="@style/ToggleButton"/>
+
+                    <Button
+                        android:id="@+id/btnBar25"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:text="25 kg"
+                        android:textSize="14sp"
+                        android:layout_marginStart="6dp"
+                        style="@style/ToggleButton"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvBarWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 kg bar"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="6dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Collar -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="COLLARS"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_secondary"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvCollarLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 × 2.5 kg"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:id="@+id/tvCollarWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2.5 kg"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnCollar"
+                    style="@style/ToggleButton"
+                    android:layout_width="100dp"
+                    android:layout_height="44dp"
+                    android:text="Add"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Plates Selection -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AVAILABLE PLATES"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_secondary"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"/>
+
+                <!-- Row 1: 25, 20, 15, 10 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="6dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+                        <CheckBox android:id="@+id/cb25" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="@color/checkbox_color"/>
+                        <TextView android:id="@+id/tvLabel25" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="25 kg" android:textSize="13sp" android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+                        <CheckBox android:id="@+id/cb20" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="@color/checkbox_color"/>
+                        <TextView android:id="@+id/tvLabel20" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20 kg" android:textSize="13sp" android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+                        <CheckBox android:id="@+id/cb15" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="@color/checkbox_color"/>
+                        <TextView android:id="@+id/tvLabel15" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="15 kg" android:textSize="13sp" android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+                        <CheckBox android:id="@+id/cb10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="@color/checkbox_color"/>
+                        <TextView android:id="@+id/tvLabel10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10 kg" android:textSize="13sp" android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Row 2: 5, 2.5, 1.25 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+                        <CheckBox android:id="@+id/cb5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="@color/checkbox_color"/>
+                        <TextView android:id="@+id/tvLabel5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5 kg" android:textSize="13sp" android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+                        <CheckBox android:id="@+id/cb2_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="@color/checkbox_color"/>
+                        <TextView android:id="@+id/tvLabel2_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2.5 kg" android:textSize="13sp" android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+                        <CheckBox android:id="@+id/cb1_25" android:layout_width="wrap_content" android:layout_height="wrap_content" android:buttonTint="@color/checkbox_color"/>
+                        <TextView android:id="@+id/tvLabel1_25" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1.25 kg" android:textSize="13sp" android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <!-- Spacer -->
+                    <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Result Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/primary"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RESULT"
+                    android:textSize="11sp"
+                    android:textColor="#BBDEFB"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp"/>
+
+                <TextView
+                    android:id="@+id/tvResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter a weight above"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/tvPlatesPerSide"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="15sp"
+                    android:textColor="#E3F2FD"
+                    android:lineSpacingMultiplier="1.4"/>
+
+                <TextView
+                    android:id="@+id/tvRemainder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="13sp"
+                    android:textColor="#FFE082"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
